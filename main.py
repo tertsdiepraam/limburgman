@@ -25,7 +25,7 @@ class MyHTMLParser(HTMLParser):
         attrs = dict(attrs)
 
         try:
-            if attrs["property"] == "article:published_time":
+            if attrs["property"] in ["article:published_time", "og:article:published_time"]:
                 self.published = attrs["content"]
                 return
 
@@ -84,6 +84,7 @@ def main():
                 # posts and comments. We assume that the time of the post is
                 # the oldest because all the comments must be made after the
                 # post.
+                print(f"Selenium for {new_data["url"]}")
                 driver.get(new_data["url"])
                 timestamps = driver.find_elements(By.XPATH, "//time")
 
