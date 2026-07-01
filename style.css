@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  :root {
+    font-size: 0.7rem;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -60,7 +66,7 @@ h2 {
 }
 
 .preview-image {
-  height: 100px;
+  height: 7em;
   aspect-ratio: 3/2;
   object-fit: cover;
 }
